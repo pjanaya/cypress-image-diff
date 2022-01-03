@@ -1,6 +1,6 @@
 {
-  "name": "cypress-image-diff-js",
-  "version": "0.0.0",
+  "name": "cypress-image-diff-js-1",
+  "version": "1.0.0",
   "description": "Visual regression testing tool with cypress",
   "main": "dist/command.js",
   "bin": {
@@ -21,6 +21,9 @@
       "main"
     ]
   },
+  "files": [
+    "dist"
+  ],
   "keywords": [
     "cypress",
     "visual",
