@@ -11,7 +11,7 @@ const compareSnapshotCommand = defaultScreenshotOptions => {
   Cypress.Commands.add(
     'compareSnapshot',
     { prevSubject: 'optional' },
-    (subject, name, testThreshold = 0, recurseOptions = {}) => {
+    (subject, name, testThreshold = 0, recurseOptions = {}, screenshotOptions = {}) => {
       const specName = Cypress.spec.name
       const testName = `${specName.replace('.js', '')}-${name}`
 
@@ -33,7 +33,7 @@ const compareSnapshotCommand = defaultScreenshotOptions => {
           // Take a screenshot and copy to baseline if it does not exist
           const objToOperateOn = subject ? cy.get(subject) : cy
           objToOperateOn
-            .screenshot(testName, defaultScreenshotOptions)
+            .screenshot(testName, Object.assign({}, defaultScreenshotOptions, screenshotOptions))
             .task('copyScreenshot', {
               testName,
             })
