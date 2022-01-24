@@ -99,6 +99,24 @@ exports[`Reporter create report should allow showing passing images via options 
                     Visual Test 1
                   </td>
                 </tr>
+                  <tr class=\\"test-row screenshot\\">
+                    <td colspan=\\"2\\">
+                      <div class=\\"row\\">
+                        <div class=\\"screenshot-column\\">
+                          <h4>Baseline</h4>
+                          <a href=\\"../cypress-visual-screenshots/baseline/Visual Test 1.png\\">
+                            <img src=\\"../cypress-visual-screenshots/baseline/Visual Test 1.png\\" alt=\\"Snow\\" style=\\"width:100%\\">
+                          </a>
+                        </div>
+                        <div class=\\"screenshot-column\\">
+                          <h4>Comparison</h4>
+                          <a href=\\"../cypress-visual-screenshots/comparison/Visual Test 1.png\\">
+                            <img src=\\"../cypress-visual-screenshots/comparison/Visual Test 1.png\\" alt=\\"Snow\\" style=\\"width:100%\\">
+                          </a>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
               </table>
             </td>
           <tr>
