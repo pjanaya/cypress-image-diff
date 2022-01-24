@@ -12,6 +12,7 @@ const handlebarsHelpers = () => {
   })
 
   Handlebars.registerHelper('equal', (lvalue, rvalue, options) => {
+    console.log({lvalue, rvalue})
     // eslint-disable-next-line no-undef
     if (arguments.length < 3)
       throw new Error("Handlebars Helper equal needs 2 parameters")
@@ -20,9 +21,17 @@ const handlebarsHelpers = () => {
     }
     return options.fn(this)
   })
+
+  Handlebars.registerHelper("if", (conditional, options) => {
+    console.log({ conditional })
+    if (conditional) {
+      return options.fn(this);
+    }
+  });
 }
 
 export const generateTemplate = options => {
+  console.log({ options })
   handlebarsHelpers()
   const templateFile = fs.readFileSync(path.resolve(__dirname, '../reporter/template.hbs'), 'utf8')
   const template = Handlebars.compile(templateFile)

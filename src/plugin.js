@@ -22,9 +22,9 @@ const tearDownDirs = () => {
   cleanDir([paths.dir.comparison, paths.dir.diff, paths.reportDir])
 }
 
-const generateReport = (instance = '') => {
+const generateReport = (instance = '', reportOptions = { showPassingImages: false }) => {
   if (testStatuses.length > 0) {
-    createReport({ tests: testStatuses, instance })
+    createReport({ tests: testStatuses, instance, reportOptions })
   }
   return true
 }

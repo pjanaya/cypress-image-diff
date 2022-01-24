@@ -97,6 +97,28 @@
                     {{test.name}}
                   </td>
                 </tr>
+                {{#equal test.testStatus 'pass'}}
+                  {{#if showPassingImages}}
+                    <tr class="test-row screenshot">
+                      <td colspan="2">
+                        <div class="row">
+                          <div class="screenshot-column">
+                            <h4>Baseline</h4>
+                            <a href="../cypress-visual-screenshots/baseline/{{test.name}}.png">
+                              <img src="../cypress-visual-screenshots/baseline/{{test.name}}.png" alt="Snow" style="width:100%">
+                            </a>
+                          </div>
+                          <div class="screenshot-column">
+                            <h4>Comparison</h4>
+                            <a href="../cypress-visual-screenshots/comparison/{{test.name}}.png">
+                              <img src="../cypress-visual-screenshots/comparison/{{test.name}}.png" alt="Snow" style="width:100%">
+                            </a>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                  {{/if}}
+                {{/equal}}
                 {{#equal test.testStatus 'fail'}}
                   <tr class="test-row screenshot">
                     <td colspan="2">

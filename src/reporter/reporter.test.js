@@ -11,5 +11,15 @@ describe('Reporter', () => {
       })
       expect(result).toMatchSnapshot()
     })
+
+    it('should allow showing passing images via options', () => {
+      const testResult1 = new TestStatus(true, 'Visual Test 1')
+      const testResult2 = new TestStatus(false, 'Visual Test 2')
+      const result = generateTemplate({ 
+        tests: [ testResult1, testResult2 ],
+        showPassingImages: true
+      })
+      expect(result).toMatchSnapshot()
+    })
   })
 })
